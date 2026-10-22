@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Printing styles for PDF & Physical Print (Universitas Pattimura Standard) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation, buttons, modals, sidebars during print */
+  header,
+  footer,
+  nav,
+  .print\:hidden,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure modal backdrop and wrappers unwrap cleanly for printing */
+  .fixed.inset-0 {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* Show only the designated printable area */
+  .printable-dossier,
+  .printable-single-component {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Ensure smooth pastel colors and sharp borders in print */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin-bottom: 12pt !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #0f2d59 !important;
+    border: 1px solid #94a3b8 !important;
+    padding: 6pt 8pt !important;
+    font-weight: 700 !important;
+  }
+
+  td {
+    border: 1px solid #cbd5e1 !important;
+    padding: 5pt 7pt !important;
+  }
+
+  .page-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .page-break-before {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+}

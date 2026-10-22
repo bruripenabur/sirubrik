@@ -1,0 +1,6 @@
+{
+  "name": "SIRUBRIK UNPATTI - Desain Instrumen Evaluasi & Rubrik OBE",
+  "description": "Aplikasi Pakar Evaluasi Pendidikan Tinggi & Konsultan Kurikulum OBE Universitas Pattimura untuk penyusunan instrumen evaluasi dan rubrik penilaian terstandar Peraturan Akademik No. 12 Tahun 2026 dan PIP Bina Mulia ke Lautan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
